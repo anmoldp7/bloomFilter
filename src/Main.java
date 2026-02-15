@@ -6,6 +6,9 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/*
+ * Driver program.
+ */
 public class Main {
     private static final int FILTER_SIZE = 999983;
     private static final String DICTIONARY_CSV = "res/dictionary_words.csv";
@@ -21,7 +24,11 @@ public class Main {
         } catch (IOException e) {
             System.out.println("IOException while reading dictionary words CSV " + e);
         }
-        DICTIONARY_WORDS = Arrays.stream(commaSeparatedWords.split(",")).collect(Collectors.toSet());
+        DICTIONARY_WORDS =
+                Arrays.stream(
+                        commaSeparatedWords
+                                .split(","))
+                        .collect(Collectors.toSet());
     }
 
     private static final int modex(long a, long b) {
